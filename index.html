@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/style/main.css">
+    <link rel="shortcut icon" href="/assets/images/icon.png" type="image/x-icon">
+    <title>Thereatra</title>
+    <script>
+        if (JSON.parse(localStorage.getItem('themeState'))) {
+            document.documentElement.style.setProperty('--main-color', 'var(--dark-main-color)')
+            document.documentElement.style.setProperty('--secondary-color', 'var(--dark-secondary-color)')
+        } else {
+            document.documentElement.style.setProperty('--main-color', 'var(--light-main-color)')
+            document.documentElement.style.setProperty('--secondary-color', 'var(--light-secondary-color)')
+        }
+    </script>
+</head>
+<body>
+    <input type="checkbox" id="switcher" onchange="saveState()"/>
+    <label for="switcher"></label>
+    <ul class="content">
+        <li><a href="https://discordapp.com/users/168455356467511296">Thereatra#3564</a></li>
+        <li><a href="https://www.twitch.tv/thereatra">twitch.tv/thereatra</a></li>
+        <li><a href="https://github.com/thereatra">github.com/thereatra</a></li>
+        <li><a href="https://steamcommunity.com/id/thereatra">steamcommunity.com/id/thereatra</a></li>
+    </ul>
+    <script src="/assets/js/theme-state.js"></script>
+    <script>
+        document
+            .querySelectorAll('body, ul, label')
+            .forEach(element => element.style.setProperty('transition-duration', '1s'))
+    </script>
+</body>
+</html>

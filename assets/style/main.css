@@ -1,0 +1,91 @@
+:root {
+    --light-main-color: #FFFFFF;
+    --light-secondary-color: #000000;
+
+    --dark-main-color: #2C2F33;
+    --dark-secondary-color: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+html, body, ul {
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition-property: background-color, color;
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+}
+
+.content {
+    height: 100%;
+}
+
+.content a:hover {
+    color: #EE7600;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+label {
+    border-radius: 50%;
+    height: 5vw;
+    width: 5vw;
+    position: fixed;
+    bottom: 0.5vw;
+    font-family: inherit;
+    font-size: 0.65vw;
+    transition-property: background-color, color;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    line-height: 775%;
+    right: 0.5vw;
+}
+
+label:hover {
+    background-color: var(--dark-main-color);
+    color: var(--dark-secondary-color);
+}
+input#switcher:checked ~ label {
+    color: var(--dark-secondary-color);
+}
+input#switcher:checked ~ label:hover {
+    background-color: var(--light-main-color);
+    color: var(--light-secondary-color);
+}
+
+input#switcher {
+    position: absolute;
+    visibility: hidden;
+}
+label::after {
+    content: "Dark";
+}
+input#switcher:checked ~ label::after {
+    content: "Light";
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #d5d5d5;
+}
+::-webkit-scrollbar-thumb {
+    background: #5a5a5a;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
